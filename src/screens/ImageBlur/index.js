@@ -32,7 +32,7 @@ const ImgBlur = () => {
     }, []);
 
 
-    // console.log(colors)
+    console.log(colors)
 
     return (
         <>
