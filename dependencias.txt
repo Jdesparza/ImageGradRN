@@ -1,0 +1,4 @@
+* yarn add react-native-fast-image
+* yarn add react-native-blur
+
+* yarn add react-native-image-colors
