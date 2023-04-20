@@ -11,12 +11,13 @@ import {
   StatusBar,
   StyleSheet,
   useColorScheme,
+  Platform
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import ImgBlur from './src/screens/ImageBlur';
+import HomeScreen from './src/screens/Home';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,9 +30,10 @@ function App(): JSX.Element {
     <SafeAreaView style={[backgroundStyle, { flex: 1 }]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+        translucent={Platform.OS === 'android' ? true : false}
+        backgroundColor={Platform.OS === 'android' ? 'transparent' : backgroundStyle.backgroundColor}
       />
-      <ImgBlur />
+      <HomeScreen />
     </SafeAreaView>
   );
 }
